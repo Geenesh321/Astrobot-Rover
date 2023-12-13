@@ -1,11 +1,88 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import "./landing.scss";
 
 const Landing = () => {
-  return (
-    <div>
-      <p>this is the landing page</p>
-    </div>
-  );
+    const [scrollValue, setScrollValue] = useState(0);
+    const handleScroll = () => {
+        setScrollValue(window.scrollY);
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    return (
+        <>
+            <div className="land_Container">
+
+                <img alt="Logo-Astrobot" src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/Logo.png")} className="logo" />
+
+                <div className="land_Img">
+                    <img
+                        alt=""
+                        src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/space.jpg")}
+                        className="image"
+                        loading="lazy"
+                    />
+
+                    <img
+                        alt=""
+                        src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/tress.png")}
+                        className="image"
+                        loading="lazy"
+                    />
+                    <img
+                        alt=""
+                        src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/river.png")}
+                        className="image"
+                        loading="lazy"
+                    />
+                    <img
+                        alt=""
+                        src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/rock-left.png")}
+                        className="image"
+                        loading="lazy"
+                    />
+
+                    <img
+                        alt=""
+                          src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/rock-right.png")}
+                        className="image"
+                        loading="lazy"
+                        style={{
+                            // top: `${-85 - scrollValue * 0.182}px`,
+                        }}
+                    />
+                    <img
+                        alt=""
+                          src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/bridge-left.png")}
+                        className="image"
+                        loading="lazy"
+                        style={{
+                            left: `${210 - scrollValue * 0.484}px`,
+                        }} />
+                    <img
+                        alt=""
+                          src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/bridge-right.png")}
+                        className="image"
+                        // loading="lazy"
+                        style={{
+                            left: `${60 + scrollValue * 0.25}px`,
+                        }} />
+                </div>
+
+                {/* <div className="land_text"
+                  style={{ top: `calc(40% + ${scrollValue * 0.8}px)` }}>
+                  <h2>It's time for a new </h2>
+                  <span>Adventure</span>
+              </div> */}
+            </div>
+        </>
+    );
 };
+
 
 export default Landing;
