@@ -33,7 +33,11 @@ const Landing = () => {
                         src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/tress.png")}
                         className="image"
                         loading="lazy"
+                        style={{
+                            top: `${20 - scrollValue * 0.484}px`,
+                        }}
                     />
+
                     <img
                         alt=""
                         src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/river.png")}
@@ -49,16 +53,13 @@ const Landing = () => {
 
                     <img
                         alt=""
-                          src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/rock-right.png")}
+                        src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/rock-right.png")}
                         className="image"
                         loading="lazy"
-                        style={{
-                            // top: `${-85 - scrollValue * 0.182}px`,
-                        }}
                     />
                     <img
                         alt=""
-                          src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/bridge-left.png")}
+                        src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/bridge-left.png")}
                         className="image"
                         loading="lazy"
                         style={{
@@ -66,19 +67,39 @@ const Landing = () => {
                         }} />
                     <img
                         alt=""
-                          src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/bridge-right.png")}
+                        src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/bridge-right.png")}
                         className="image"
-                        // loading="lazy"
+                        loading="lazy"
                         style={{
                             left: `${60 + scrollValue * 0.25}px`,
                         }} />
+
+                    <img
+                        alt=""
+                        src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/pigeon.png")}
+                        className="image"
+                        loading="lazy"
+                        style={{
+                            top: `${-65 - scrollValue * 0.55}px`,
+                            left: `${60 + scrollValue * 0.25}px`,
+                        }} />
+
+                    <img
+                        alt=""
+                        src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/pegion2.png")}
+                        className="image"
+                        loading="lazy"
+                        style={{
+                            left: `${210 - scrollValue * 0.484}px`,
+                            top: `${135 - scrollValue * 0.182}px`,
+                        }} />
                 </div>
 
-                {/* <div className="land_text"
-                  style={{ top: `calc(40% + ${scrollValue * 0.8}px)` }}>
-                  <h2>It's time for a new </h2>
-                  <span>Adventure</span>
-              </div> */}
+                <div className="land_text"
+                    style={{ top: `calc(40% + ${scrollValue * 0.8}px)` }}>
+                    <h2>Fusing Dreams and Tech into </h2>
+                    <span>Tomorrow's Reality</span>
+                </div>
             </div>
         </>
     );
