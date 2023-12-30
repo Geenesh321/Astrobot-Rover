@@ -1,0 +1,122 @@
+@import url(/src/Components/global.css);
+
+.display {
+  background: black;
+  height: 10%;
+  width: 100%;
+  background-color: red;
+
+  .navigation {
+    position: fixed;
+    height: 72%;
+    width: 5%;
+    left: 1%;
+    top: 25%;
+    border-radius: 10px;
+    box-sizing: initial;
+    transition: width 0.5s;
+    overflow-x: hidden;
+    z-index: 5;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.455);
+
+    .weather {
+      position: relative;
+      top: 60px;
+      width: 100%;
+      color: var(--secondary-color);
+
+      svg {
+        display: flex;
+        font-size: 2.5rem;
+        margin-left: 20px;
+        margin-top: -50px;
+      }
+
+      span {
+        display: fixed;
+        display: block;
+        margin-top: 10px;
+        margin-left: 90px;
+        font-family: var(--paragraph);
+        font-weight: bold;
+
+        .C {
+          margin-top: 3px;
+          margin-left: 112px;
+        }
+
+      }
+
+      p {
+        position: fixed;
+        display: block;
+        top: 11%;
+        left: 16px;
+        font-weight: bold;
+        font-family: var(--paragraph);
+        z-index: 2;
+      }
+
+      .loading {
+        display: flex;
+        position: relative;
+        font-weight: bold;
+        font-family: var(--paragraph);
+      }
+    }
+
+    &:hover,
+    &.active {
+      width: 12%;
+    }
+  }
+}
+
+.Nav_Body {
+  position: fixed;
+  display: block;
+  margin-top: 5rem;
+  list-style: none;
+  padding: 20px;
+  line-height: 60px;
+
+  li {
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+
+    &:hover {
+      background-color: var(--fourth-color);
+      width: 160px;
+
+    }
+
+    &.active {
+      background-color: var(--fourth-color);
+      color: white;
+      width: 160px;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+
+    .icon-and-text {
+      display: flex;
+      color: white;
+
+
+      .icon {
+        font-size: 35px;
+        margin-right: 40px;
+      }
+
+      .text {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: var(--paragraph);
+      }
+
+    }
+  }
+}

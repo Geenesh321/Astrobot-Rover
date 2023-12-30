@@ -1,0 +1,57 @@
+@import url('/src/Components/global.css');
+
+.social_media {
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 9;
+
+  .time {
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px; 
+  }
+
+  .icon_row {
+    list-style: none;
+    display: flex;
+    gap: 20px; 
+
+    li {
+      a {
+        color: var(--secondary-color);
+        font-size: 2.5rem;
+        transition: color 0.3s;
+
+        &:hover {
+          color: var(--third-color);
+        }
+      }
+    }
+  }
+
+  // Responsive Styles
+  // @media (max-width: 768px) {
+  //   flex-direction: row;
+  //   top: auto;
+  //   bottom: 2%;
+  //   right: 50%;
+  //   transform: translateX(50%);
+
+  //   .time {
+  //     font-size: 1.2rem;
+  //     margin-bottom: 0;
+  //   }
+
+  //   .icon_row {
+  //     li {
+  //       a {
+  //         font-size: 2rem;
+  //       }
+  //     }
+  //   }
+  // }
+}

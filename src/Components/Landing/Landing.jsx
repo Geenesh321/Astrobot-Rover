@@ -18,7 +18,7 @@ const Landing = () => {
         <>
             <div className="land_Container">
 
-                <img alt="Logo-Astrobot" src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/Logo.png")} className="logo" />
+                <img alt="Logo-Astrobot" src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/Logo1.png")} className="logo" />
 
                 <div className="land_Img">
                     <img
@@ -81,7 +81,7 @@ const Landing = () => {
                         loading="lazy"
                         style={{
                             top: `${-65 - scrollValue * 0.55}px`,
-                            left: `${60 + scrollValue * 0.25}px`,
+                            left: `${60 + scrollValue * 0.25}px`
                         }} />
 
                     <img

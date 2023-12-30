@@ -1,6 +1,7 @@
 import React from 'react';
+import './footer.scss';
 
-const nav = () => {
+const Footer = () => {
   return (
     <div>
       
@@ -8,4 +9,4 @@ const nav = () => {
   );
 };
 
-export default nav;
+export default Footer;

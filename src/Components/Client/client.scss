@@ -1,0 +1,32 @@
+
+.C_text {
+    color: black;
+
+    p {
+        font-size: 18px;
+
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+.C_handsake {
+    position: absolute;
+    width: 100%; 
+    height: auto; 
+    margin-top: 80%; 
+    z-index: 3;
+}
+
+@media screen and (max-width: 768px) {
+    .C_text {
+        p {
+            font-size: 16px; 
+        }
+    }
+
+    .C_handsake {
+        margin-top: 10px; 
+    }
+}
