@@ -1,0 +1,100 @@
+@import url(/src/Components/global.css);
+
+.footer {
+    background: linear-gradient(rgba(36, 84, 89, 1), rgba(46, 158, 170, 1), rgba(39, 109, 117, 1), rgba(36, 83, 87, 1));
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  
+    .icon_row {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+  
+      li {
+        a {
+          color: var(--secondary-color);
+          font-size: 2rem;
+          transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  
+          &:hover {
+            transform: scale(1.2);
+            color: var(--third-color);
+          }
+        }
+      }
+    }
+  
+    .nav-item {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: var(--paragraph);
+      margin: 10px;
+      transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+  
+      &:hover {
+        text-decoration: underline;
+        transform: scale(1.1);
+        color: var(--third-color);
+      }
+    }
+  
+    .social-media {
+      margin-top: 1em;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+  
+      .icon_row {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+  
+        li {
+          a {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  
+            &:hover {
+              transform: scale(1.2);
+              color: var(--third-color);
+            }
+          }
+        }
+      }
+    }
+  
+    .copyright {
+      margin-top: 1em;
+      font-size: 14px;
+      opacity: 0.8;
+      color: white;
+      font-weight: 600;
+      transition: transform 0.3s ease-in-out;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .footer-nav,
+      .social-media {
+        flex-direction: column;
+      }
+  
+      .social-media {
+        margin-top: 1em;
+      }
+    }
+  }
+  

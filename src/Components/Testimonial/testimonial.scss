@@ -1,11 +1,12 @@
 @import url(/src/Components/global.css);
 
 .t_Welcome {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    top: 100px;
     text-align: center;
     width: 100%;
     color: var(--secondary-color);

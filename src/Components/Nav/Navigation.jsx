@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { FaSkyatlas } from 'react-icons/fa';
 import { RiThunderstormsFill, RiLiveLine } from 'react-icons/ri';
 import { IoShareSocialOutline } from "react-icons/io5";
@@ -12,6 +14,7 @@ const Navigation = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [weatherData, setWeatherData] = useState(null);
+  const navigate = useNavigate();
 
   const handleItemClick = (index) => {
     setActiveIndex(index);
@@ -77,7 +80,7 @@ const Navigation = () => {
           {weatherData ? (
             <div className="weather">
               {getWeatherIcon(weatherData.current.condition.code)}
-              <span>{weatherData.current.temp_c}<p className='C'>° C</p></span>
+              <span>{weatherData.current.temp_c}   ° C</span>
               <p>{getWeatherConditionText()}</p>
             </div>
           ) : (
@@ -109,8 +112,7 @@ const Navigation = () => {
                 <span className="text">Netlink</span>
               </div>
             </li>
-            <br />
-            <li onClick={() => handleItemClick(4)} className={`your-li-class ${activeIndex === 4 ? 'active' : ''}`}>
+            <li onClick={() => handleItemClick(4)} className={`your-li-class ${activeIndex === 4 ? 'active' : ''}`} style={{marginTop:'30px'}}>
               <div className="icon-and-text">
                 <span className="icon"><IoPersonSharp /></span>
                 <span className="text">Login</span>

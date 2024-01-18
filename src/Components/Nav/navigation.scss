@@ -8,10 +8,10 @@
 
   .navigation {
     position: fixed;
-    height: 72%;
-    width: 5%;
+    height: 72vh;
+    width: 6%;
     left: 1%;
-    top: 25%;
+    top: 23%;
     border-radius: 10px;
     box-sizing: initial;
     transition: width 0.5s;
@@ -19,10 +19,22 @@
     z-index: 5;
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.455);
+    p{
+      text-overflow: ellipsis; 
+      overflow: hidden; 
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      border-radius: 0;
+    }
 
     .weather {
       position: relative;
-      top: 60px;
+      top: 70px;
       width: 100%;
       color: var(--secondary-color);
 
@@ -34,25 +46,20 @@
       }
 
       span {
+        position: relative;
         display: fixed;
         display: block;
-        margin-top: 10px;
-        margin-left: 90px;
+        top: -25px;
+        left: 89px;
         font-family: var(--paragraph);
         font-weight: bold;
-
-        .C {
-          margin-top: 3px;
-          margin-left: 112px;
-        }
-
       }
 
       p {
         position: fixed;
         display: block;
-        top: 11%;
-        left: 16px;
+        top: 13%;
+        left: 18px;
         font-weight: bold;
         font-family: var(--paragraph);
         z-index: 2;
@@ -87,6 +94,10 @@
     transition: background-color 0.3s ease;
     margin-bottom: 5px;
 
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
     &:hover {
       background-color: var(--fourth-color);
       width: 160px;
@@ -100,11 +111,11 @@
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
     }
-
+    
     .icon-and-text {
       display: flex;
       color: white;
-
+      margin-top: 12px;
 
       .icon {
         font-size: 35px;
@@ -112,6 +123,7 @@
       }
 
       .text {
+        margin-top: -6px;
         font-size: 20px;
         font-weight: bold;
         font-family: var(--paragraph);
