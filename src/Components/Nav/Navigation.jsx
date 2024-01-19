@@ -12,7 +12,6 @@ import './navigation.scss';
 
 const Navigation = () => {
   const [activeIndex, setActiveIndex] = useState(null);
-  const [currentTime, setCurrentTime] = useState(new Date());
   const [weatherData, setWeatherData] = useState(null);
   const navigate = useNavigate();
 
@@ -23,7 +22,6 @@ const Navigation = () => {
   useEffect(() => {
     fetchWeatherData();
     const timerID = setInterval(() => {
-      setCurrentTime(new Date());
     }, 1000);
 
     return () => {
@@ -84,7 +82,7 @@ const Navigation = () => {
               <p>{getWeatherConditionText()}</p>
             </div>
           ) : (
-            <span className="loading">Loading...</span>
+            <div className="loading"><p>Loading...</p></div>
           )}
 
           <ul className="Nav_Body">
