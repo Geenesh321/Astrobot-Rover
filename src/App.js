@@ -10,6 +10,7 @@ import Registration from './Components/Registration/registration.jsx';
 import Login from './Components/Login/login.jsx';
 import Logout from './Components/Logout/logout.jsx';
 import Temperature from './Components/Temprature/temperature.jsx';
+import Moist from './Components/Moist/moist.jsx';
 
 function App() {
   return (
@@ -20,12 +21,12 @@ function App() {
           <Route path='/' element={<Landing />} />
           <Route path='/temperature' element={<Temperature />} />
           <Route path="#" element={<Logout />} />
-          {/* <Route path="#" element={<Social />} /> */}
           <Route path="#" element={<Testimonial />} />
           <Route path="#" element={<Client />} />
           <Route path="#" element={<Registration />} />
           <Route path="#" element={<Login />} />
           <Route path="#" element={<Footer />} />
+          <Route path='/moist' element={<Moist/>} />
         </Routes>
       </>
     </Router>

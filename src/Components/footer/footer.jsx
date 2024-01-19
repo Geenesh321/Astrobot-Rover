@@ -22,10 +22,10 @@ const Footer = () => {
 
       <nav className="footer-nav">
         <a href="/" className="nav-item">Home</a>
-        <a href="/climate" className="nav-item">Climate</a>
-        <a href="/moisture" className="nav-item">Moisture</a>
+        <a href="/temperature" className="nav-item">Temperature</a>
+        <a href="/moist" className="nav-item">Moisture</a>
+        <a href="/live" className="nav-item">Live</a>
         <a href="/netlink" className="nav-item">NetLink</a>
-        <a href="/stream" className="nav-item">Stream</a>
       </nav>
 
       <div className="copyright">
