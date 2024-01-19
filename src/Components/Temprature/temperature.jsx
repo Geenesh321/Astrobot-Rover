@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './temperature.scss';
+import Footer from '../footer/footer';
 
 const Temperature = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('contentTemperature');
+  const [activeSubTab, setActiveSubTab] = useState('lineGraph'); // Added state for sub-tabs
   const navigate = useNavigate();
 
   const handleLogoutClick = () => {
@@ -17,6 +19,11 @@ const Temperature = () => {
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
+    setActiveSubTab('lineGraph');
+  };
+
+  const handleSubTabClick = (subTabId) => {
+    setActiveSubTab(subTabId);
   };
 
   return (
@@ -69,34 +76,147 @@ const Temperature = () => {
         <div className="tabs-container">
           <div className="tabs">
             {/* Temperature Tab */}
-            <div  className={`tab ${activeTab === 'contentTemperature' ? 'active' : ''}`}
+            <div className={`tab ${activeTab === 'contentTemperature' ? 'active' : ''}`}
               onClick={() => handleTabClick('contentTemperature')}> Temperature </div>
 
             {/* Humidity Tab */}
             <div
               className={`tab ${activeTab === 'contentHumidity' ? 'active' : ''}`}
-              onClick={() => handleTabClick('contentHumidity')} > Humidity </div>
+              onClick={() => handleTabClick('contentHumidity')}> Humidity </div>
 
             {/* Heat Index Tab */}
             <div
               className={`tab ${activeTab === 'contentHeatIndex' ? 'active' : ''}`}
-              onClick={() => handleTabClick('contentHeatIndex')}> Heat Index </div> 
-            
+              onClick={() => handleTabClick('contentHeatIndex')}> Heat Index </div>
+          </div>
+
+          {/* Sub-Tabs Section */}
+          <div className="sub-tabs">
+            <div
+              className={`sub-tab ${activeSubTab === 'lineGraph' ? 'active' : ''}`}
+              onClick={() => handleSubTabClick('lineGraph')}> Line Graph </div>
+
+            <div className={`sub-tab ${activeSubTab === 'digitalData' ? 'active' : ''}`}
+              onClick={() => handleSubTabClick('digitalData')}> Digital Data </div>
+
+            <div className={`sub-tab ${activeSubTab === 'analysis' ? 'active' : ''}`}
+              onClick={() => handleSubTabClick('analysis')}> Analysis </div>
           </div>
 
           {/* Tab Content */}
           <div className={`tab-content ${activeTab === 'contentTemperature' ? 'active' : ''}`}>
-            <p>Content for Temperature tab goes here.</p>
+            {/* Content for Temperature tab goes here */}
+            {activeSubTab === 'lineGraph' && (
+              <iframe
+                width="450"
+                height="260"
+                style={{ border: '1px solid #cccccc' }}
+                src="https://thingspeak.com/channels/2342977/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line"
+                title="Temperature Chart"
+              ></iframe>
+            )}
+
+
+            {activeSubTab === 'digitalData' &&(
+              <iframe
+                width="450"
+                height="260"
+                style={{ border: '1px solid #cccccc' }}
+                src="https://thingspeak.com/channels/2342977/widgets/747436"
+                title="Temperature Chart"
+              ></iframe>
+            )}
+
+
+            {activeSubTab === 'analysis' &&(
+              <iframe
+                width="450"
+                height="260"
+                style={{ border: '1px solid #cccccc' }}
+                src="https://thingspeak.com/channels/2342977/widgets/747436"
+                title="Temperature Chart"
+              ></iframe>
+            )}
           </div>
           <div className={`tab-content ${activeTab === 'contentHumidity' ? 'active' : ''}`}>
-            <p>Content for Humidity tab goes here.</p>
+
+
+            {activeSubTab === 'lineGraph' &&(
+              <iframe
+                width="450"
+                height="260"
+                style={{ border: '1px solid #cccccc' }}
+                src="https://thingspeak.com/channels/2342977/charts/2?bgcolor=%23ffffff&color=%23d62020&results=60&title=Humidity"
+                title="Temperature Chart"
+              ></iframe>
+            )}
+
+
+            {activeSubTab === 'digitalData' &&(
+              <iframe
+                width="450"
+                height="260"
+                style={{ border: '1px solid #cccccc' }}
+                src="https://thingspeak.com/channels/2342977/widgets/747436"
+                title="Temperature Chart"
+              ></iframe>
+            )}
+
+
+            {activeSubTab === 'analysis' && (
+              <iframe
+                width="450"
+                height="260"
+                style={{ border: '1px solid #cccccc' }}
+                src="https://thingspeak.com/channels/2342977/widgets/747436"
+                title="Temperature Chart"
+              ></iframe>
+            )}
           </div>
+
+
           <div className={`tab-content ${activeTab === 'contentHeatIndex' ? 'active' : ''}`}>
-            <p>Content for Heat Index tab goes here.</p>
+            {activeSubTab === 'lineGraph' &&(
+              <iframe
+                width="450"
+                height="260"
+                style={{ border: '1px solid #cccccc' }}
+                src="https://thingspeak.com/channels/2342977/widgets/747436"
+                title="Temperature Chart"
+              ></iframe>
+            )}
+
+
+            {activeSubTab === 'digitalData' &&(
+              <iframe
+                width="450"
+                height="260"
+                style={{ border: '1px solid #cccccc' }}
+                src="https://thingspeak.com/channels/2342977/widgets/747436"
+                title="Temperature Chart"
+              ></iframe>
+            )}
+
+
+            {activeSubTab === 'analysis' &&(
+              <iframe
+                width="450"
+                height="260"
+                style={{ border: '1px solid #cccccc' }}
+                src="https://thingspeak.com/channels/2342977/widgets/747436"
+                title="Temperature Chart"
+              ></iframe>
+            )}
           </div>
         </div>
 
-      </div>
+
+        <div className="app">
+          <Footer />
+        </div>
+      </div >
+
+
     </>
   );
 };

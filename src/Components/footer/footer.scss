@@ -9,13 +9,12 @@
     justify-content: center;
     height: 25vh;
     width: 100%;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
   
     .icon_row {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 25px;
+      margin-bottom: 20px;
   
       li {
         a {
@@ -35,9 +34,8 @@
       text-decoration: none;
       color: white;
       font-size: 18px;
-      font-weight: bold;
       font-family: var(--paragraph);
-      margin: 10px;
+      margin: 16px;
       transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
   
       &:hover {
@@ -61,7 +59,7 @@
         li {
           a {
             color: var(--secondary-color);
-            font-size: 2rem;
+            font-size: 2.3rem;
             transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
   
             &:hover {
@@ -74,11 +72,10 @@
     }
   
     .copyright {
-      margin-top: 1em;
-      font-size: 14px;
+      margin-top: 1.2em;
+      font-size: 18px;
       opacity: 0.8;
       color: white;
-      font-weight: 600;
       transition: transform 0.3s ease-in-out;
   
       &:hover {

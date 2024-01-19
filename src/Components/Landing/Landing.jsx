@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./landing.scss";
+import Social from "../Social/social";
 
 const Landing = () => {
     const [scrollValue, setScrollValue] = useState(0);
@@ -101,6 +102,7 @@ const Landing = () => {
                     <span>Tomorrow's Reality</span>
                 </div>
             </div>
+            <Social />
         </>
     );
 };

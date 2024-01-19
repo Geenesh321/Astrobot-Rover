@@ -1,6 +1,6 @@
 .temperature-container {
     background: linear-gradient(180deg, rgb(118, 237, 233) 0%, rgb(94, 197, 210) 49.5%, rgb(68, 157, 186) 100%);
-    height: 200vh;
+    height: 230vh;
 
     .header {
         height: 80px;
@@ -187,7 +187,7 @@
 
     .temp-head {
         position: relative;
-        top: 13%;
+        top: 150px;
         font-family: var(--paragraph);
         text-align: center;
         color: rgba(5, 28, 33, 1);
@@ -207,45 +207,85 @@
     }
 
     .tabs-container {
-        position: relative;
-        top: 15%;
-        height: 50vh;
-        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
         margin: 0 auto;
-        background: rgba(76, 0, 255, 0.253);
+        padding: 20px;
         border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        background-color: rgba(36, 84, 89, 1);
+        position: relative;
+        top: 195px;
+        font-weight: bold;
+        font-family: var(--paragraph);
+        height: 460px;
 
         .tabs {
-            height: 15%;
-            width: 80%;
+            background: linear-gradient(180deg, rgb(118, 237, 233) 0%, rgb(94, 197, 210) 49.5%, rgb(68, 157, 186) 100%);
+            height: 70px;
+            width: 60%;
             margin: 0 auto;
             display: flex;
             align-items: center;
-            justify-content: space-around;
-            color: black;
-            background-color: rgba(36, 84, 89, 1);
-            font-family: var(--paragraph);
-            font-weight: bold;
-            border-radius: 10px;
+            justify-content: space-evenly;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
 
             .tab {
+                padding: 15px 25px;
                 cursor: pointer;
-                padding: 10px 20px;
-                background-color: rgba(99, 206, 215, 1);
+                font-size: 18px;
+                color: #333;
+                background-color: #f4f4f4;
                 border: 1px solid #ccc;
-                border-radius: 5px;
-                user-select: none;
-                height: 80%;
-                display: flex;
-                align-items: center;
-
-                &:hover {
-                    background-color: #ff0000;
-                }
+                border-radius: 8px;
+                transition: background-color 0.3s, color 0.3s;
 
                 &.active {
-                    background-color: #e0e0e0;  // Adjust styles for active tab
-                  }
+                    color: #fff;
+                    background-color: rgba(14, 76, 117, 1);
+                }
+
+                &:hover {
+                    background-color: #122443;
+                    color: rgb(255, 255, 255);
+                }
+            }
+        }
+
+        .sub-tabs {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            height: auto;
+            width: 12%;
+            right: 24%;
+
+            .sub-tab {
+                width: 100%;
+                padding: 15px 25px;
+                margin-top: 30px;
+                cursor: pointer;
+                font-size: 16px;
+                color: #555;
+                background-color: #e6e6e6;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                transition: background-color 0.3s, color 0.3s;
+
+                &.active {
+                    color: #fff;
+                    background-color: rgba(14, 76, 117, 0.437);
+                }
+
+                &:hover {
+                    background-color: #0a1a33;
+                    color: rgb(255, 255, 255);
+                }
             }
         }
 
@@ -253,29 +293,43 @@
             display: none;
             padding: 20px;
             border: 1px solid #ccc;
-            border-radius: 0 0 5px 5px;
-            width: 100%;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            width: 499px;
+            position: relative;
+            top: -18rem;
+            left: 100px;
 
             &.active {
                 display: block;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            }
+
+            p {
+                margin: 0;
+            }
+
+            iframe {
+                width: 100%;
+                height: 250px;
+                border: 1px solid #ccc;
+            }
+        }
+
+        .tab,
+        .sub-tab,
+        .tab-content {
+            &:hover {
+                cursor: pointer;
             }
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .app {
+        margin-top: 260px;
+    }
 
 
 }

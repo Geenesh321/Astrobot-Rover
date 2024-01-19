@@ -15,12 +15,12 @@ function App() {
   return (
     <Router>
       <>
-        {/* <Navigation /> */}
+        <Navigation />
         <Routes>
           <Route path='/' element={<Landing />} />
           <Route path='/temperature' element={<Temperature />} />
           <Route path="#" element={<Logout />} />
-          <Route path="#" element={<Social />} />
+          {/* <Route path="#" element={<Social />} /> */}
           <Route path="#" element={<Testimonial />} />
           <Route path="#" element={<Client />} />
           <Route path="#" element={<Registration />} />
