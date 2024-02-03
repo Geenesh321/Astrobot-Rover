@@ -11,6 +11,8 @@ import Login from './Components/Login/login.jsx';
 import Logout from './Components/Logout/logout.jsx';
 import Temperature from './Components/Temprature/temperature.jsx';
 import Moist from './Components/Moist/moist.jsx';
+import Live from './Components/Live/live.jsx';
+import NavBar from './Components/NavBar/bar.jsx';
 
 function App() {
   return (
@@ -20,13 +22,15 @@ function App() {
         <Routes>
           <Route path='/' element={<Landing />} />
           <Route path='/temperature' element={<Temperature />} />
-          <Route path="#" element={<Logout />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="#" element={<Testimonial />} />
           <Route path="#" element={<Client />} />
           <Route path="#" element={<Registration />} />
           <Route path="#" element={<Login />} />
           <Route path="#" element={<Footer />} />
-          <Route path='/moist' element={<Moist/>} />
+          <Route path='/moist' element={<Moist />} />
+          <Route path='/live' element={<Live />} />
+          <Route path='/bar' element={<NavBar />} />
         </Routes>
       </>
     </Router>

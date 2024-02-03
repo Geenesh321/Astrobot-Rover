@@ -15,7 +15,6 @@ const Registration = () => {
 
         setSelectedFile(file);
 
-        // Create a preview URL for the selected image
         const reader = new FileReader();
         reader.onloadend = () => {
             setPreviewImage(reader.result);

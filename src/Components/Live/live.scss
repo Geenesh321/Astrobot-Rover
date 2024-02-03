@@ -1,94 +1,103 @@
-.temperature-container {
-    background: linear-gradient(180deg, rgb(118, 237, 233) 0%, rgb(94, 197, 210) 49.5%, rgb(68, 157, 186) 100%);
-    height: 230vh;
+@import url('/src/components/global.css');
 
-    .header {
-        height: 80px;
-        width: 100%;
-        background: linear-gradient(to left, rgba(3, 136, 169, 1), rgba(20, 59, 68, 1));
-        display: flex;
-        align-items: center;
+.livePage {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
 
-        .user-container {
-            position: relative;
+.liveBackground {
+  background: linear-gradient(180deg, rgb(118, 237, 233) 0%, rgb(94, 197, 210) 49.5%, rgb(68, 157, 186) 100%);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-                transition: background-color 0.3s ease-in-out;
-            }
+.liveContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #245459;
+  max-width: 80%;
+  margin: 0 auto;
+  border-radius: 4px;
+}
 
-            .Astro-logo {
-                position: absolute;
-                transform: translateY(-50%);
-                width: auto;
-                height: 90px;
-            }
+.livePhoto {
+  max-width: 100%;
 
-            .User {
-                position: absolute;
-                top: calc(18% + 0px);
-                right: -94rem;
-                transform: translateY(-50%);
-                width: auto;
-                height: 65px;
-                display: inline-block;
+  @media screen and (min-width: 768px) {
+    max-width: 50%;
+  }
 
-                &:hover {
-                    transform: translateY(-50%) scale(1.10);
-                    transition: transform 0.3s ease;
-                }
-            }
-        }
+  @media screen and (min-width: 1024px) {
+    max-width: 45%;
+  }
+}
 
-        .dropdown {
-            position: absolute;
-            top: calc(8% + 18px);
-            left: 93%;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            font-size: 18px;
-            font-weight: bold;
-            width: 150px;
-            backdrop-filter: blur(10px);
-            z-index: 1;
+.liveDescription {
+  width: 100%;
+  max-width: 45%;
+  padding: 20px;
+  color: white;
+  text-align: justify;
 
-            button {
-                padding: 10px;
-                cursor: pointer;
-                text-align: center;
-                width: 100%;
-                background-color: #e74c3c;
-                color: #fff;
-                font-weight: bold;
-                border: none;
-                transition: background-color 0.3s ease-in-out;
+  h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
 
-                &:hover {
-                    background-color: rgba(20, 59, 68, 1);
-                }
-            }
+  p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
 
-            p {
-                color: #333;
-                margin: 10px;
-            }
-        }
+  .connectionTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 12px;
     }
 
-    @media (max-width: 768px) {
-        .user-container {
-            .User {
-                left: 50%;
-                top: calc(12% + 20px);
-                transform: translateX(-50%);
-            }
-        }
-
-        .dropdown {
-            left: 50%;
-            top: calc(12% + 20px);
-            transform: translateX(-50%);
-        }
+    th {
+      background-color: #26c1d987;
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 50%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    max-width: 55%;
+  }
+}
+
+.watchLiveBtn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  outline: none;
+  background-color: #63CED7;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  border-radius: 5px;
+  transition: all ease 0.3s;
+  cursor: pointer;
+  margin-top: 20px;
+
+  &:hover {
+    background-color: #00ddff;
+    color: rgba(255, 255, 255, 0.927);
+  }
 }

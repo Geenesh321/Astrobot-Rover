@@ -1,21 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './moist.scss';
+import NavBar from '../NavBar/bar'
 import Footer from '../footer/footer';
 
 const Moist = () => {
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [activeTab, setActiveTab] = useState('contentTemperature');
     const [activeSubTab, setActiveSubTab] = useState('lineGraph');
-    const navigate = useNavigate();
-
-    const handleLogoutClick = () => {
-        navigate('/logout');
-    };
-
-    const handleUserClick = () => {
-        setDropdownOpen(!isDropdownOpen);
-    };
 
     const handleTabClick = (tabId) => {
         setActiveTab(tabId);
@@ -29,18 +19,7 @@ const Moist = () => {
     return (
         <>
             <div className="temperature-container">
-                <div className="header">
-                    <div className='user-container' onClick={handleUserClick}>
-                        <img alt="Logo-Astrobot" src={require("/Astrobot-Rover/Frontend/src/Assets/Temperature/Logo.png")} className='Astro-logo' />
-                        <img alt="Icon" src={require("/Astrobot-Rover/Frontend/src/Assets/Temperature/user.png")} className='User' />
-                    </div>
-                    {isDropdownOpen && (
-                        <div className="dropdown">
-                            <p>Welcome Zenas</p>
-                            <button className="user_Logout" onClick={handleLogoutClick}> Logout </button>
-                        </div>
-                    )}
-                </div>
+                <NavBar />
 
                 <div className='temp-section'>
                     <img
