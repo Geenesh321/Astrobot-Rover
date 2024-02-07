@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './Components/Landing/Landing';
-import Social from './Components/Social/social';
 import Navigation from './Components/Nav/Navigation';
 import Testimonial from './Components/Testimonial/testimonial';
 import Client from './Components/Client/client';
@@ -25,12 +24,13 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="#" element={<Testimonial />} />
           <Route path="#" element={<Client />} />
-          <Route path="#" element={<Registration />} />
+          <Route path="registration" element={<Registration />} />
           <Route path="#" element={<Login />} />
           <Route path="#" element={<Footer />} />
           <Route path='/moist' element={<Moist />} />
           <Route path='/live' element={<Live />} />
           <Route path='/bar' element={<NavBar />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
       </>
     </Router>

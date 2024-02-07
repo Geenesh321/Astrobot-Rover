@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./landing.scss";
 import Social from "../Social/social";
+import Testimonial from "../Testimonial/testimonial"
 
 const Landing = () => {
     const [scrollValue, setScrollValue] = useState(0);
@@ -103,6 +104,15 @@ const Landing = () => {
                 </div>
             </div>
             <Social />
+
+            <div className='Welcome'>
+                <h1>“Welcome to the Astrobot Explorer”</h1>
+                <p>"Embark on a journey of innovation and discovery with our advanced space
+                    rover, designed to chart new territories and unveil the mysteries
+                    of the universe." </p>
+            </div>
+
+            <Testimonial />
         </>
     );
 };
