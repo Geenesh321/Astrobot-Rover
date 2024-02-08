@@ -4,7 +4,7 @@ import Landing from './Components/Landing/Landing';
 import Navigation from './Components/Nav/Navigation';
 import Testimonial from './Components/Testimonial/testimonial';
 import Client from './Components/Client/client';
-import Footer from './Components/footer/footer';
+import Footer from './Components/footer/footer.jsx';
 import Registration from './Components/Registration/registration.jsx';
 import Login from './Components/Login/login.jsx';
 import Logout from './Components/Logout/logout.jsx';

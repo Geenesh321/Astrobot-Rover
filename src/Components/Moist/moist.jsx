@@ -56,12 +56,12 @@ const Moist = () => {
                     <div className="tabs">
                         {/* Temperature Tab */}
                         <div className={`tab ${activeTab === 'contentTemperature' ? 'active' : ''}`}
-                            onClick={() => handleTabClick('contentTemperature')}> Temperature </div>
+                            onClick={() => handleTabClick('contentTemperature')}> Moisture </div>
 
                         {/* Humidity Tab */}
                         <div
                             className={`tab ${activeTab === 'contentHumidity' ? 'active' : ''}`}
-                            onClick={() => handleTabClick('contentHumidity')}> Humidity </div>
+                            onClick={() => handleTabClick('contentHumidity')}> U.V </div>
                     </div>
 
                     {/* Sub-Tabs Section */}

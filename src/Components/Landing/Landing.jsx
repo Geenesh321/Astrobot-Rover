@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./landing.scss";
+
 import Social from "../Social/social";
 import Testimonial from "../Testimonial/testimonial"
+import Client from "../Client/client";
 
 const Landing = () => {
     const [scrollValue, setScrollValue] = useState(0);
@@ -113,6 +115,7 @@ const Landing = () => {
             </div>
 
             <Testimonial />
+            <Client />
         </>
     );
 };
