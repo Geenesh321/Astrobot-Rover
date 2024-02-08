@@ -1,57 +1,187 @@
 @import url('/src/Components/global.css');
 
-.test_Container {
+.test_Title {
     position: relative;
-    top: 7rem;
+    top: 4rem;
     z-index: 4;
     color: #69D4DF;
-    padding: 0px 140px;
+    padding: 0 140px;
 
     h1 {
         font-size: 2.9em;
         font-family: var(--h1);
     }
+}
 
-    .slide {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 2rem;
-        padding: 20px;
-        border: 2px solid #69D4DF;
+.test_Container {
+    position: relative;
+    top: 7rem;
+    z-index: 4;
+    color: #69D4DF;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80%;
+
+    .left-slide,
+    .right-slide,
+    .left-left-slide,
+    .right-right-slide {
+        position: absolute;
+        width: 30%;
         border-radius: 10px;
-        width: 100%;
+        background-color: white;
+
+        &:nth-child(1) {
+            left: 0%;
+            opacity: 0.2;
+            top:60px;
+        }
+
+        &:nth-child(2) {
+            left: 15%;
+            opacity: 0.5;
+            top:30px;
+
+        }
+
+        &:nth-child(4) {
+            left: 55%;
+            opacity: 0.5;
+            top:40px;
+        }
+
+        &:nth-child(5) {
+            left: 70%;
+            z-index: -1;
+            opacity: 0.2;
+            top:60px;
+        }
 
         .content-container {
-            flex: 1;
-            padding-right: 20px;
+            padding: 20px;
+            text-align: center;
 
             h1 {
                 font-size: 2em;
-                margin-bottom: 1rem;
+                font-family: var(--h2);
+                font-weight: 700;
             }
 
             p {
-                font-size: 1.2em;
-                margin-bottom: 1rem;
+                margin-top: 10px;
+                font-size: 1em;
+                color: #000000c0;
+                font-family: var(--paragraph);
+                font-weight: 500;
+                text-align: justify;
             }
 
             .slide-button {
+                margin-top: 20px;
                 background-color: #69D4DF;
                 color: #fff;
                 padding: 10px 20px;
-                font-size: 1.2em;
+                font-size: 1em;
+                font-weight: bold;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: #5cb8cf;
+                }
             }
         }
 
         .slide-image {
-            border: 1px solid #69D4DF;
-            height: auto;
-            width: 20%;
-            object-fit:contain;
+            height: 150px;
+            width: 100%;
+            object-fit: contain;
             border-radius: 10px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
         }
+    }
+
+    .main-slide {
+        position: absolute;
+        width: 40%;
+        height: 50vh;
+        z-index: 3;
+        margin-top: 2rem;
+        border-radius: 10px;
+        background-color: white;
+        margin: 0 auto;
+        left: 50%;
+        transform: translate(-50%, 0%);
+
+        .content-container {
+            padding: 20px;
+            text-align: center;
+
+            h1 {
+                font-size: 2em;
+                font-family: var(--h2);
+                font-weight: 700;
+            }
+
+            p {
+                margin-top: 10px;
+                font-size: 1em;
+                color: #000000c0;
+                font-family: var(--paragraph);
+                font-weight: 500;
+                text-align: justify;
+                line-height: 1.5;
+            }
+
+            .slide-button {
+                margin-top: 20px;
+                background-color: #69D4DF;
+                color: #fff;
+                padding: 10px 20px;
+                font-size: 1em;
+                font-weight: bold;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: #5cb8cf;
+                }
+            }
+        }
+
+        .slide-image {
+            height: 150px;
+            width: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .test_Container {
+        .left-slide,
+        .right-slide,
+        .left-left-slide,
+        .right-right-slide {
+            width: 45%;
+        }
+    }
+
+    .main-slide {
+        width: 70%;
     }
 }
