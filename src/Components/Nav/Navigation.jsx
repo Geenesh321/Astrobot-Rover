@@ -17,25 +17,8 @@ const Navigation = () => {
 
   const handleItemClick = (index) => {
     setActiveIndex(index);
-    if (index === 0) {
-      navigate('/temperature');
-    }
-
-    if (index === 1) {
-      navigate('/moist');
-    }
-
-    if (index === 2) {
-      navigate('/live');
-    }
-
-    if (index === 3) {
-      navigate('/netlink');
-    }
-
-    if (index === 4) {
-      navigate('/login');
-    }
+    const routes = ['/temperature', '/moist', '/live', '/netlink', '/login'];
+    navigate(routes[index]);
   };
 
   useEffect(() => {
@@ -58,9 +41,8 @@ const Navigation = () => {
         const { latitude, longitude } = position.coords;
 
         const response = await fetch(
-          `https://api.weatherapi.com/v1/current.json?key=f01a18229a8141859cd55311232407&q=${latitude},${longitude}&aqi=no`
+          `https://api.weatherapi.com/v1/current.json?key=4b08038be84d4dfeb39114521232007&q=${latitude},${longitude}&aqi=no`
         );
-
         const data = await response.json();
         setWeatherData(data);
       });

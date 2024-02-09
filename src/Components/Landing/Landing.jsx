@@ -4,9 +4,13 @@ import "./landing.scss";
 import Social from "../Social/social";
 import Testimonial from "../Testimonial/testimonial"
 import Client from "../Client/client";
+import Loading from "../Loading/loading"
 
 const Landing = () => {
+    
+    const [isLoading, setIsLoading] = useState(true);
     const [scrollValue, setScrollValue] = useState(0);
+
     const handleScroll = () => {
         setScrollValue(window.scrollY);
     };
@@ -17,6 +21,19 @@ const Landing = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    useEffect(() => {
+        const loadingTimeout = setTimeout(() => {
+            setIsLoading(false);
+        }, 5000);
+
+        return () => clearTimeout(loadingTimeout);
+    }, []);
+
+    if (isLoading) {
+        return <Loading />;
+    }
+
 
     return (
         <>

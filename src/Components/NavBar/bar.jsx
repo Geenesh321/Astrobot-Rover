@@ -6,24 +6,19 @@ const NavBar = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const navigate = useNavigate();
 
+
     const handleUserClick = () => {
         setDropdownOpen(!isDropdownOpen);
-    };
+      };
 
-    const handleLogoutClick = () => {
+      const handleLogoutClick = () => {
         navigate('/logout');
-    };
-
-    const handleLogoClick = () => {
-        navigate('/');
-    };
+      };
 
     return (
         <div className="header">
             <div className='user-container' onClick={handleUserClick}>
-                <a href="/" onClick={handleLogoClick}>
-                    <img alt="Logo-Astrobot" src={require("/Astrobot-Rover/Frontend/src/Assets/Temperature/Logo.png")} className='Astro-logo' />
-                </a>
+                <img alt="Logo-Astrobot" src={require("/Astrobot-Rover/Frontend/src/Assets/Temperature/Logo.png")} className='Astro-logo' />
                 <img alt="Icon" src={require("/Astrobot-Rover/Frontend/src/Assets/Temperature/user.png")} className='User' />
             </div>
             {isDropdownOpen && (

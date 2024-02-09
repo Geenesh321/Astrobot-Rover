@@ -1,9 +1,11 @@
 import React from 'react';
-import NavBar from '../NavBar/bar';
-import Footer from '../footer/footer';
 import './live.scss';
 
+import NavBar from '../NavBar/bar';
+import Footer from '../footer/footer';
+
 const LivePage = () => {
+  
   return (
     <div className='livePage'>
       <NavBar />
@@ -51,7 +53,7 @@ const LivePage = () => {
 
           </div>
 
-          <a className='watchLiveBtn' href="http://10.50.0.197/">Watch Live</a>
+          <a className='watchLiveBtn' href="http://10.50.0.197/">  Watch Live</a>
         </div>
       </div>
 
