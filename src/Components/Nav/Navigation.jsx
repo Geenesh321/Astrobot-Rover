@@ -17,6 +17,25 @@ const Navigation = () => {
 
   const handleItemClick = (index) => {
     setActiveIndex(index);
+    if (index === 0) {
+      navigate('/temperature');
+    }
+
+    if (index === 1) {
+      navigate('/moist');
+    }
+
+    if (index === 2) {
+      navigate('/live');
+    }
+
+    if (index === 3) {
+      navigate('/netlink');
+    }
+
+    if (index === 4) {
+      navigate('/login');
+    }
   };
 
   useEffect(() => {
@@ -28,6 +47,10 @@ const Navigation = () => {
       clearInterval(timerID);
     };
   }, []);
+
+  useEffect(() => {
+    console.log("Weather Data:", weatherData);
+  }, [weatherData]);
 
   const fetchWeatherData = async () => {
     try {
@@ -47,25 +70,47 @@ const Navigation = () => {
   };
 
   const getWeatherIcon = (conditionCode) => {
+    console.log("Condition Code:", conditionCode);
     if (conditionCode >= 200 && conditionCode < 300) {
+      // Thunderstorm group
       return <RiThunderstormsFill />;
-    } else if (conditionCode >= 300 && conditionCode < 600) {
+    } else if (conditionCode >= 300 && conditionCode < 400) {
+      // Drizzle group
+      return <BsMoisture />;
+    } else if (conditionCode >= 500 && conditionCode < 600) {
+      // Rain group
       return <BsFillCloudRainFill />;
     } else if (conditionCode >= 600 && conditionCode < 700) {
+      // Snow group
       return <BsCloudSnowFill />;
     } else if (conditionCode >= 700 && conditionCode < 800) {
+      // Atmosphere group
       return <TiWeatherWindyCloudy />;
     } else if (conditionCode === 800) {
+      // Clear group
       return <FaSkyatlas />;
-    } else if (conditionCode > 800 && conditionCode < 900) {
+    } else if (conditionCode === 801) {
+      // Few clouds
+      return <TiWeatherPartlySunny />;
+    } else if (conditionCode === 802 || conditionCode === 803) {
+      // Scattered or broken clouds
       return <BsFillCloudHaze2Fill />;
+    } else if (conditionCode === 804) {
+      // Overcast clouds
+      return <BsFillCloudHaze2Fill />;
+    } else if (conditionCode >= 900 && conditionCode < 1000) {
+      // Extreme weather conditions
+      return <RiThunderstormsFill />;
+    } else if (conditionCode >= 1000 && conditionCode < 1100) {
+      return <TiWeatherPartlySunny />;
     } else {
+      // Default condition
       return <TiWeatherPartlySunny />;
     }
   };
 
-  const getWeatherConditionText = (conditionCode) => {
-    if (weatherData && weatherData.current.condition) {
+  const getWeatherConditionText = () => {
+    if (weatherData && weatherData.current && weatherData.current.condition) {
       return weatherData.current.condition.text;
     }
     return "Loading...";
@@ -110,7 +155,7 @@ const Navigation = () => {
                 <span className="text">Netlink</span>
               </div>
             </li>
-            <li onClick={() => handleItemClick(4)} className={`your-li-class ${activeIndex === 4 ? 'active' : ''}`} style={{marginTop:'30px'}}>
+            <li onClick={() => handleItemClick(4)} className={`your-li-class ${activeIndex === 4 ? 'active' : ''}`} style={{ marginTop: '30px' }}>
               <div className="icon-and-text">
                 <span className="icon"><IoPersonSharp /></span>
                 <span className="text">Login</span>
