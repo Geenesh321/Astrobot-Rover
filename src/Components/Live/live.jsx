@@ -7,8 +7,9 @@ import Footer from '../footer/footer';
 const LivePage = () => {
   
   return (
+    <>
+    <NavBar />
     <div className='livePage'>
-      <NavBar />
 
       <div className='liveBackground'>
         <div className='liveContainer'>
@@ -59,7 +60,10 @@ const LivePage = () => {
 
       <Footer />
     </div>
+    </>
+
   );
 };
+
 
 export default LivePage;

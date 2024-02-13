@@ -1,13 +1,16 @@
-@import url(/src/Components/global.css);
+@import url('/src/Components/global.css');
+
 .header {
     height: 80px;
     width: 100%;
     background: linear-gradient(to left, rgba(3, 136, 169, 1), rgba(20, 59, 68, 1));
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     .user-container {
         position: relative;
+        margin-right: 20px;
 
         &:hover {
             background-color: rgba(255, 255, 255, 0.2);
@@ -15,33 +18,26 @@
         }
 
         .Astro-logo {
-            position: absolute;
-            transform: translateY(-50%);
+            height: 80px;
             width: auto;
-            height: 90px;
         }
 
         .User {
-            position: absolute;
-            top: calc(18% + 0px);
-            right: -94rem;
-            transform: translateY(-50%);
+            height: 50px;
             width: auto;
-            height: 65px;
             display: inline-block;
-
-            &:hover {
-                transform: translateY(-50%) scale(1.10);
-                transition: transform 0.3s ease;
-            }
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px; // Positioned 20px from the right edge
+            z-index: 1;
         }
     }
 
     .dropdown {
         position: absolute;
-        top: calc(8% + 18px);
-        left: 93%;
-        transform: translateX(-50%);
+        top: 100%;
+        right: 0;
         background-color: rgba(255, 255, 255, 0.9);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         font-size: 18px;
@@ -73,18 +69,32 @@
     }
 }
 
-@media (max-width: 768px) {
-    .user-container {
-        .User {
-            left: 50%;
-            top: calc(12% + 20px);
-            transform: translateX(-50%);
-        }
+@media (max-width: 1024px) {
+    .Astro-logo {
+        height: 70px;
     }
 
-    .dropdown {
-        left: 50%;
-        top: calc(12% + 20px);
-        transform: translateX(-50%);
+    .User {
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Astro-logo {
+        height: 60px;
+    }
+
+    .User {
+        height: 30px;
+    }
+}
+
+@media (max-width: 425px) {
+    .user-container {
+        margin-right: 0;
+    }
+
+    .User {
+        right: 10px; // Further adjust for smaller screens
     }
 }
