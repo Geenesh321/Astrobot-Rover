@@ -4,8 +4,8 @@ import './testimonial.scss';
 const Testimonial = () => {
   return (
     <>
-      <div className='test_Title'><h1>Components</h1></div>
-      
+    <div className='test_Title'><h1>Components</h1></div>
+
       <div className="test_Container">
         <div className="left-slide">
           <img alt="Logo-Astrobot" src={require("/Astrobot-Rover/Frontend/src/Assets/Testimonial/l298n.png")} className='slide-image' />

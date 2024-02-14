@@ -39,7 +39,7 @@ const Landing = () => {
         <>
             <div className="land_Container">
 
-                <img alt="Logo-Astrobot" src={require("/Astrobot-Rover/Frontend/src/Assets/Landing/Logo1.png")} className="logo" />
+                <img alt="Logo-Astrobot" src={require("/Astrobot-Rover/Frontend/src/Assets/Register/brand.png")} className="logo" />
 
                 <div className="land_Img">
                     <img
