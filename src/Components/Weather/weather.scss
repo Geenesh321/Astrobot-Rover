@@ -1,0 +1,42 @@
+@import url(/src/Components/global.css);
+
+.weather {
+    position: relative;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-family: var(--paragraph);
+
+    .icon {
+        height: 55px;
+        width: auto;
+        margin-left: -5px;
+    }
+
+    .temperature {
+        position: absolute;
+        left: 75px;
+        top: 0px;
+        white-space: nowrap;
+    }
+
+    .condition {
+        margin-top: -50px;
+        overflow: hidden;
+        white-space: nowrap;
+
+        // Testing Required
+        // text-overflow: ellipsis;
+    }
+}
+
+.loading {
+    position: relative;
+    color: white;
+    left: 15px;
+
+    p {
+        color: #666;
+        font-weight: bold;
+        font-family: var(--paragraph);
+    }
+}

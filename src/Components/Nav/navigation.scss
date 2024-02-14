@@ -1,95 +1,32 @@
 @import url(/src/Components/global.css);
 
-.display {
-  background: black;
-  height: 10%;
-  width: 100%;
-  background-color: red;
-
-  .navigation {
-    position: fixed;
-    height: 77vh;
-    width: 6%;
-    left: 1%;
-    top: 155px;
-    border-radius: 10px;
-    box-sizing: initial;
-    transition: width 0.5s;
-    overflow-x: hidden;
-    z-index: 5;
-    backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.455);
-
-    p {
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .weather {
-      position: relative;
-      top: 70px;
-      width: 100%;
-      color: var(--secondary-color);
-
-      svg {
-        display: flex;
-        font-size: 2.5rem;
-        margin-left: 20px;
-        margin-top: -50px;
-      }
-
-      span {
-        position: relative;
-        display: fixed;
-        display: block;
-        top: -25px;
-        left: 100px;
-        font-family: var(--paragraph);
-        font-weight: bold;
-      }
-
-      p {
-        position: fixed;
-        display: block;
-        top: 13%;
-        left: 18px;
-        font-weight: bold;
-        font-family: var(--paragraph);
-        z-index: 2;
-      }
-    }
-
-    &:hover,
-    &.active {
-      width: 11%;
-    }
-  }
-
-  .loading {
-    position: relative;
-    color: white;
-    left: 15px;
-
-    p {
-      color: white;
-      font-weight: bold;
-      font-family: var(--paragraph);
-    }
-  }
-}
-
 .Nav_Body {
   position: fixed;
-  display: block;
-  margin-top: 6rem;
   list-style: none;
   padding: 20px;
   line-height: 60px;
+  height: 65vh;
+  width: 3%;
+  left: 1%;
+  top: 155px;
+  border-radius: 10px;
+  box-sizing: initial;
+  transition: width 0.5s;
+  overflow-x: hidden;
+  z-index: 5;
+  backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.415);
+
+  &:hover,
+  &.active {
+    width: 9%;
+  }
 
   li {
+    position: relative; 
     cursor: pointer;
-    border-radius: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     transition: background-color 0.3s ease;
     margin-bottom: 5px;
 
@@ -119,13 +56,12 @@
     &.active {
       background-color: rgba(14, 76, 117, 1);
       color: white;
-      transform: scale(1.1);
+      width: 100%;
     }
   }
 
-  // Media query for small screens
   @media (max-width: 768px) {
-    .navigation {
+    .Nav_Body {
       width: 100%;
       top: 0;
 
@@ -153,22 +89,9 @@
       }
     }
 
-    .loading {
-      position: relative;
-      left: 15px;
-
-      p {
-        top: 70px;
-      }
-    }
-
-    .Nav_Body {
-      margin-top: 5rem;
-
-      li {
-        &:hover {
-          width: 100%;
-        }
+    li {
+      &:hover {
+        width: 100%;
       }
     }
   }

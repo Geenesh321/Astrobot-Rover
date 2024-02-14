@@ -9,7 +9,7 @@ import Temperature from './Components/Temprature/temperature.jsx';
 import Moist from './Components/Moist/moist.jsx';
 import Live from './Components/Live/live.jsx';
 import NavBar from './Components/NavBar/bar.jsx';
-import Spinner from './Components/Spinner/spinner.jsx';
+import Weather from './Components/Weather/weather.jsx';
 
 function App() {
   return (
