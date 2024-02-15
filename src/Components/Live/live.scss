@@ -1,7 +1,7 @@
 @import url('/src/components/global.css');
 
 .livePage {
-  font-family: 'Arial', sans-serif;
+  font-family: var(--paragraph);
   color: #333;
 }
 

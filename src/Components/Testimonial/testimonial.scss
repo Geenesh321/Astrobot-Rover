@@ -1,187 +1,112 @@
 @import url('/src/Components/global.css');
 
-.test_Title {
+.test_Text {
     position: relative;
-    top: 4rem;
     z-index: 4;
+    font-size: 2.9rem;
+    margin-bottom: 3rem;
     color: #69D4DF;
-    padding: 0 140px;
-
-    h1 {
-        font-size: 2.9em;
-        font-family: var(--h1);
-    }
+    font-family: var(--h1);
+    padding: 8vw;
 }
+
+.testimonial {
+    width: 60%;
+    overflow: hidden;
+    position: relative;
+    z-index: 4;
+    margin: auto;
+    margin-top: -8rem;
 
 .test_Container {
     position: relative;
-    top: 7rem;
-    z-index: 4;
-    color: #69D4DF;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 80%;
+    display: flex;
+    transition: transform 0.5s ease;
+    overflow-x: hidden;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.23);
+    backdrop-filter: blur(10px);
+    border: 10px solid #69D4DF;
+    border-top-width: 30px; 
+    border-radius: 20px;
 
-    .left-slide,
-    .right-slide,
-    .left-left-slide,
-    .right-right-slide {
-        position: absolute;
-        width: 30%;
-        border-radius: 10px;
-        background-color: white;
 
-        &:nth-child(1) {
-            left: 0%;
-            opacity: 0.2;
-            top:60px;
-        }
 
-        &:nth-child(2) {
-            left: 15%;
-            opacity: 0.5;
-            top:30px;
+    .slide {
+        position: relative;
+        flex: 0 0 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: 1;
 
-        }
-
-        &:nth-child(4) {
-            left: 55%;
-            opacity: 0.5;
-            top:40px;
-        }
-
-        &:nth-child(5) {
-            left: 70%;
-            z-index: -1;
-            opacity: 0.2;
-            top:60px;
+        &.active {
+            opacity: 1;
         }
 
         .content-container {
-            padding: 20px;
-            text-align: center;
+            position: relative;
+            padding: 5rem;
+            border-radius: 2rem;
+            max-width: 60%;
+            text-align: justify;
 
             h1 {
-                font-size: 2em;
-                font-family: var(--h2);
-                font-weight: 700;
+                font-size: 1.8em;
+                margin-bottom: 1rem;
+                color: #d2d0d0;
+                font-family: var(--h1);
             }
 
             p {
-                margin-top: 10px;
-                font-size: 1em;
-                color: #000000c0;
+                width: 65vh;
+                font-size: 1.1em;
+                margin-bottom: 2rem;
+                color: #bdbaba;
                 font-family: var(--paragraph);
-                font-weight: 500;
-                text-align: justify;
             }
 
             .slide-button {
-                margin-top: 20px;
-                background-color: #69D4DF;
+                background-color: #0E4C75;
                 color: #fff;
-                padding: 10px 20px;
-                font-size: 1em;
-                font-weight: bold;
                 border: none;
-                border-radius: 5px;
+                padding: 1rem 2rem;
+                font-size: 1.2rem;
                 cursor: pointer;
-                transition: background-color 0.3s ease;
+                border-radius: 0.5rem;
+                transition: background-color 0.3s ease, transform 0.2s ease; // Added transform for hover effect
 
                 &:hover {
-                    background-color: #5cb8cf;
+                    background-color: #69D4DF;
+                    color: #000000;
+                    font-weight: bold;
+                    transform: translateY(-2px);
                 }
-            }
-        }
-
-        .slide-image {
-            height: 150px;
-            width: 100%;
-            object-fit: contain;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-
-            &:hover {
-                transform: scale(1.05);
-            }
-        }
-    }
-
-    .main-slide {
-        position: absolute;
-        width: 40%;
-        height: 50vh;
-        z-index: 3;
-        margin-top: 2rem;
-        border-radius: 10px;
-        background-color: white;
-        margin: 0 auto;
-        left: 50%;
-        transform: translate(-50%, 0%);
-
-        .content-container {
-            padding: 20px;
-            text-align: center;
-
-            h1 {
-                font-size: 2em;
-                font-family: var(--h2);
-                font-weight: 700;
-            }
-
-            p {
-                margin-top: 10px;
-                font-size: 1em;
-                color: #000000c0;
-                font-family: var(--paragraph);
-                font-weight: 500;
-                text-align: justify;
-                line-height: 1.5;
-            }
-
-            .slide-button {
-                margin-top: 20px;
-                background-color: #69D4DF;
-                color: #fff;
-                padding: 10px 20px;
-                font-size: 1em;
-                font-weight: bold;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-
-                &:hover {
-                    background-color: #5cb8cf;
-                }
-            }
-        }
-
-        .slide-image {
-            height: 150px;
-            width: 100%;
-            object-fit: contain;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-
-            &:hover {
-                transform: scale(1.05);
             }
         }
     }
 }
 
-@media screen and (max-width: 1024px) {
-    .test_Container {
-        .left-slide,
-        .right-slide,
-        .left-left-slide,
-        .right-right-slide {
-            width: 45%;
-        }
+    .slide-image {
+        position: relative;
+        max-width: 30%;
+        height: auto;
+        border-radius: 2rem;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+        transition: transform 0.5s ease; 
     }
+}
 
-    .main-slide {
-        width: 70%;
-    }
+.tv-stand {
+    position: relative;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px; 
+    height: 50px; 
+    background-color: #69D4DF;
+    border-radius: 10px; 
+    z-index: 5;
 }

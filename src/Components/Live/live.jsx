@@ -10,7 +10,6 @@ const LivePage = () => {
     <>
     <NavBar />
     <div className='livePage'>
-
       <div className='liveBackground'>
         <div className='liveContainer'>
           <img
