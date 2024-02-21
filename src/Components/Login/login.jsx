@@ -6,6 +6,12 @@ import { FiKey  } from "react-icons/fi";
 
 
 const Login = () => {
+  // const navigate = useNavigate();
+
+//   const handleForgotClick = () => {
+//     navigate('logout');
+// };
+
   return (
     <div className="login">
       <div className="left-card">

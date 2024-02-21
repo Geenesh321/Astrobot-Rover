@@ -9,8 +9,7 @@ import Temperature from './Components/Temprature/temperature.jsx';
 import Moist from './Components/Moist/moist.jsx';
 import Live from './Components/Live/live.jsx';
 import NavBar from './Components/NavBar/bar.jsx';
-import Weather from './Components/Weather/weather.jsx';
-import Testimonial from './Components/Testimonial/testimonial.jsx';
+
 
 function App() {
   return (
@@ -26,6 +25,7 @@ function App() {
           <Route path='/live' element={<Live />} />
           <Route path='/bar' element={<NavBar />} />
           <Route path='/login' element={<Login />} />
+
         </Routes>
       </>
     </Router>

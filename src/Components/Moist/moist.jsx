@@ -56,7 +56,7 @@ const Moist = () => {
                     <div className="tabs">
                         {/* Temperature Tab */}
                         <div className={`tab ${activeTab === 'contentTemperature' ? 'active' : ''}`}
-                            onClick={() => handleTabClick('contentTemperature')}> Moisture </div>
+                            onClick={() => handleTabClick('contentTemperature')}> Soil-Moisture </div>
 
                         {/* Humidity Tab */}
                         <div
@@ -82,33 +82,24 @@ const Moist = () => {
                         {/* Content for Temperature tab goes here */}
                         {activeSubTab === 'lineGraph' && (
                             <iframe
-                                width="450"
-                                height="260"
-                                style={{ border: '1px solid #cccccc' }}
-                                src="https://thingspeak.com/channels/2342977/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line"
-                                title="Temperature Chart"
+                                src="https://thingspeak.com/channels/2342977/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Soil+Moisture&type=line"
+                                title="Soil-Moisture Chart"
                             ></iframe>
                         )}
 
 
                         {activeSubTab === 'digitalData' && (
                             <iframe
-                                width="450"
-                                height="260"
-                                style={{ border: '1px solid #cccccc' }}
-                                src="https://thingspeak.com/channels/2342977/widgets/747436"
-                                title="Temperature Chart"
+                                src="https://thingspeak.com/channels/2342977/widgets/788879"
+                                title="Soil-Moisture Chart"
                             ></iframe>
                         )}
 
 
                         {activeSubTab === 'analysis' && (
                             <iframe
-                                width="450"
-                                height="260"
-                                style={{ border: '1px solid #cccccc' }}
-                                src="https://thingspeak.com/channels/2342977/widgets/747436"
-                                title="Temperature Chart"
+                                src="https://thingspeak.com/channels/2342977/widgets/788880"
+                                title="Soil-Moisture Chart"
                             ></iframe>
                         )}
                     </div>
@@ -117,33 +108,24 @@ const Moist = () => {
 
                         {activeSubTab === 'lineGraph' && (
                             <iframe
-                                width="450"
-                                height="260"
-                                style={{ border: '1px solid #cccccc' }}
-                                src="https://thingspeak.com/channels/2342977/charts/2?bgcolor=%23ffffff&color=%23d62020&results=60&title=Humidity"
-                                title="Temperature Chart"
+                                src="https://thingspeak.com/channels/2342977/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=UV+Radiation&type=line"
+                                title="UV Chart"
                             ></iframe>
                         )}
 
 
                         {activeSubTab === 'digitalData' && (
                             <iframe
-                                width="450"
-                                height="260"
-                                style={{ border: '1px solid #cccccc' }}
-                                src="https://thingspeak.com/channels/2342977/widgets/747436"
-                                title="Temperature Chart"
+                                src="https://thingspeak.com/channels/2342977/widgets/788881"
+                                title="UV Chart"
                             ></iframe>
                         )}
 
 
                         {activeSubTab === 'analysis' && (
                             <iframe
-                                width="450"
-                                height="260"
-                                style={{ border: '1px solid #cccccc' }}
-                                src="https://thingspeak.com/channels/2342977/widgets/747436"
-                                title="Temperature Chart"
+                                src="https://thingspeak.com/channels/2342977/widgets/788882"
+                                title="UV Chart"
                             ></iframe>
                         )}
                     </div>
