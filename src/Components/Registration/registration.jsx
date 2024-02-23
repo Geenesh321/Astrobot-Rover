@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiUpload , FiKey  } from "react-icons/fi";
+import { FiUpload, FiKey } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 
@@ -26,7 +26,7 @@ const Registration = () => {
             setPreviewImage(null);
         }
     };
-    
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -37,10 +37,13 @@ const Registration = () => {
         <div className="registration-container">
             <div className="container">
                 <img alt="Logo-Astrobot" src={require("/Astrobot-Rover/Frontend/src/Assets/Register/brand.png")} className='brand-logo' />
-                <div className="upload-container">
+                <div className={`upload-container ${previewImage ? 'has-image' : ''}`}>
                     <label htmlFor="file-upload" className="upload-button">
                         <i className="icons"><FiUpload /></i>
                         <span className="upload-text">Upload</span>
+                        {previewImage && (
+                            <img src={previewImage} alt="Preview" className="image-preview" />
+                        )}
                     </label>
                     <input
                         id="file-upload"
@@ -49,12 +52,6 @@ const Registration = () => {
                         className="file-input"
                     />
                 </div>
-
-                {previewImage && (
-                    <div className="image-preview">
-                        <img src={previewImage} alt="Preview" />
-                    </div>
-                )}
 
                 <form className="registration-form" onSubmit={handleSubmit}>
                     <h2>Create your account</h2>

@@ -1,95 +1,99 @@
-@import url('/src/Components/global.css');
-
 .header {
     height: 80px;
     width: 100%;
-    background: linear-gradient(to left, rgba(3, 136, 169, 1), rgba(20, 59, 68, 1));
+    background: linear-gradient(to left, rgb(3, 136, 169), rgb(20, 59, 68));
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        .logo {
+            width: 250px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: bold;
+            margin: 0;
+        }
+    }
 
     .user-container {
         position: relative;
-        margin-right: 20px;
+        cursor: pointer;
 
-        .Astro-logo {
-            height: auto;
-            width: 270px;
-        }
-
-        .User {
-            height: auto;
+        .user-icon {
             width: 60px;
-            display: inline-block;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: -1240px; 
-            z-index: 1;
+            height: auto;
+            border-radius: 50%;
         }
-    }
 
-    .dropdown {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        font-size: 18px;
-        font-weight: bold;
-        width: 150px;
-        backdrop-filter: blur(10px);
-        z-index: 1;
-
-        button {
+        .dropdown {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            border-radius: 5px;
             padding: 10px;
-            cursor: pointer;
-            text-align: center;
-            width: 100%;
-            background-color: #e74c3c;
-            color: #fff;
-            font-weight: bold;
-            border: none;
-            transition: background-color 0.3s ease-in-out;
+            z-index: 1;
 
-            &:hover {
-                background-color: rgba(20, 59, 68, 1);
+            p {
+                color: #000000;
+                font-size: 16px;
+                margin: 0 0 10px 0;
+                font-weight: bold;
+            }
+
+            button {
+                width: 100%;
+                padding: 10px;
+                background-color: #e76f51;
+                color: #ffffff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: #ff9f68;
+                }
             }
         }
-
-        p {
-            color: #333;
-            margin: 7px;
-        }
-    }
-}
-
-@media (max-width: 1024px) {
-    .Astro-logo {
-        height: 70px;
-    }
-
-    .User {
-        height: 40px;
     }
 }
 
 @media (max-width: 768px) {
-    .Astro-logo {
-        height: 60px;
+    .header {
+        padding: 0 10px;
     }
 
-    .User {
-        height: 30px;
-    }
-}
+    .logo-container {
+        .logo {
+            width: 100px;
+        }
 
-@media (max-width: 425px) {
+        h1 {
+            font-size: 20px;
+        }
+    }
+
     .user-container {
-        margin-right: 0;
-    }
+        .user-icon {
+            width: 30px;
+        }
 
-    .User {
-        right: 10px; // Further adjust for smaller screens
+        .dropdown {
+            width: 150px;
+        }
     }
 }

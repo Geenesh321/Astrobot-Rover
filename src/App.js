@@ -9,6 +9,8 @@ import Temperature from './Components/Temprature/temperature.jsx';
 import Moist from './Components/Moist/moist.jsx';
 import Live from './Components/Live/live.jsx';
 import NavBar from './Components/NavBar/bar.jsx';
+import NetLink from './Components/Netlink/netlink.jsx';
+import Post from './Components/Post/post.jsx';
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
           <Route path='/live' element={<Live />} />
           <Route path='/bar' element={<NavBar />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/netlink' element={<NetLink />} />
+          <Route path='/post' element={<Post />} />
 
         </Routes>
       </>

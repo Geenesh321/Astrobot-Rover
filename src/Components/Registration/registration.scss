@@ -50,11 +50,12 @@
                 justify-content: center;
                 right: 30%;
                 top: 40px;
+                z-index: 1;
+
 
                 i.icons {
                     font-size: 100px;
                 }
-
             }
 
             .upload-text {
@@ -65,7 +66,25 @@
             .file-input {
                 display: none;
             }
+
+            .image-preview {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-94%, -32%);
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+                opacity: 0; 
+                transition: opacity 0.3s ease; 
+            }
+        
+            &.has-image .image-preview {
+                opacity: 1; 
+            }
         }
+        
 
         .registration-form {
             position: relative;
@@ -73,8 +92,9 @@
             padding: 20px;
             color: white;
             left: 58%;
-            bottom: 60%;
+            bottom: 50%;
             font-family: var(--paragraph);
+            padding: 0 20px;
 
 
             h2 {
@@ -105,7 +125,6 @@
                 display: flex;
                 align-items: center;
                 margin-bottom: 15px;
-                animation: fadeInUp 0.5s ease; // Add your preferred animation
 
                 .input-icon {
                     margin-right: 10px;
@@ -115,7 +134,8 @@
 
                 input {
                     background-color: #ffffff;
-                    width: 80%;
+                    width: 100%;
+                    max-width: 80%;
                     padding: 10px;
                     border: none;
                     border-radius: 5px;
@@ -137,9 +157,10 @@
             }
 
             button {
-                width: 90%;
+                width: 100%;
+                max-width: 87%;
                 background-color: #71e6e4;
-                border-radius: 8px;
+                border-radius: 4px;
                 height: 40px;
                 color: #000000;
                 font-weight: 800;
@@ -155,11 +176,10 @@
                 font-family: var(--paragraph);
                 font-weight: 600;
 
-
                 a {
                     color: #71e6e4;
                     text-decoration: none;
-                    margin-left: 120px;
+                    margin-left: 160px;
 
                     &:hover {
                         text-decoration: underline;
@@ -170,29 +190,12 @@
     }
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .image-preview {
-    margin-top: -21%;
-    margin-left: 76PX;
-    overflow: hidden;
-    border-radius: 50%;
+    margin-top: -45px;
+    margin-left: 110px;
     height: 250px;
-    width: 250px;
 
     img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        display: none;
     }
 }
