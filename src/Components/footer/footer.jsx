@@ -12,10 +12,10 @@ const Footer = () => {
       <section className="social-media">
 
         <ul className="icon_row">
-          <li><a href="/"><FiFacebook /></a></li>
-          <li><a href="/"><FaInstagram /></a></li>
-          <li><a href="/"><FiGithub  /></a></li>
-          <li><a href="/"><FiLinkedin  /></a></li>
+          <li><a href="https://www.facebook.com/geenesh.acharya.5"><FiFacebook /></a></li>
+          <li><a href="https://www.instagram.com/geenesh_/"><FaInstagram /></a></li>
+          <li><a href="https://github.com/Geenesh321"><FiGithub  /></a></li>
+          <li><a href="https://www.linkedin.com/in/geenesh/"><FiLinkedin  /></a></li>
         </ul>
 
       </section>

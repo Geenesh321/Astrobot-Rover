@@ -1,16 +1,16 @@
 import React from 'react';
 import './login.scss';
+import { useNavigate } from 'react-router-dom';
 
 import { MdOutlineMail } from "react-icons/md";
-import { FiKey  } from "react-icons/fi";
+import { FiKey } from "react-icons/fi";
 
 
 const Login = () => {
-  // const navigate = useNavigate();
-
-//   const handleForgotClick = () => {
-//     navigate('logout');
-// };
+  const navigate = useNavigate(); 
+  const handleRegisterClick = () => {
+    navigate('/registration'); 
+  };
 
   return (
     <div className="login">
@@ -19,11 +19,11 @@ const Login = () => {
           <img alt="Brand" src={require("/Astrobot-Rover/Frontend/src/Assets/Register/brand.png")} />
         </div>
         <div className="Lbody">
-        <img alt="Brand" src={require("/Astrobot-Rover/Frontend/src/Assets/Login/Laptop.png")} />
+          <img alt="Brand" src={require("/Astrobot-Rover/Frontend/src/Assets/Login/Laptop.png")} />
         </div>
         <div className="Lfooter">
           <p>
-            <span className="quote">"Tiny changes can bring about remarkable results."</span><br/><br/>
+            <span className="quote">"Tiny changes can bring about remarkable results."</span><br /><br />
             <span className="author">- James Clear</span>
           </p>
         </div>
@@ -36,14 +36,14 @@ const Login = () => {
           <div className="input-icon-wrap">
 
             <span className="input-icon">
-            <MdOutlineMail className="input-icon" />
+              <MdOutlineMail className="input-icon" />
             </span>
-            
-          <input type="text" className="input-with-icon" id="email-input" placeholder="Email" />
+
+            <input type="text" className="input-with-icon" id="email-input" placeholder="Email" />
           </div>
           <div className="input-icon-wrap">
             <span className="input-icon">
-            <FiKey className="input-icon" />
+              <FiKey className="input-icon" />
             </span>
             <input type="password" className="input-with-icon" id="password-input" placeholder="Password" />
           </div>
@@ -59,6 +59,10 @@ const Login = () => {
           <div>
             <button className="btn login-button">Login</button>
           </div>
+        </div>
+
+        <div className="register-now">
+          <p>Don't have an account? <span className="register-link" onClick={handleRegisterClick} >Register Now</span></p>
         </div>
       </div>
     </div>

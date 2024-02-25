@@ -182,3 +182,26 @@
         }
     }
 }
+
+.register-now {
+    text-align: center;
+    margin-top: 20px;
+  
+    p {
+      color: white;
+      font-size: 0.9rem;
+      font-family: var(--paragraph);
+    }
+  
+    .register-link {
+      color: #71E6E4;
+      cursor: pointer;
+      font-weight: bold;
+      transition: color 0.3s;
+  
+      &:hover {
+        color: #18aba9;
+      }
+    }
+  }
+  
