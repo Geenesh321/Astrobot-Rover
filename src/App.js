@@ -10,8 +10,8 @@ import Moist from './Components/Moist/moist.jsx';
 import Live from './Components/Live/live.jsx';
 import NavBar from './Components/NavBar/bar.jsx';
 import NetLink from './Components/Netlink/netlink.jsx';
-import Post from './Components/Post/post.jsx';
 
+import Popup from './Components/Popup/popup.jsx';
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
           <Route path='/bar' element={<NavBar />} />
           <Route path='/login' element={<Login />} />
           <Route path='/netlink' element={<NetLink />} />
-          <Route path='/post' element={<Post />} />
+          <Route path='/popup' element={<Popup />} />
 
         </Routes>
       </>

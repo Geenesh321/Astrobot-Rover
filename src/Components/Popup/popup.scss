@@ -1,22 +1,3 @@
-.netlink-Container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.popup-trigger {
-    cursor: pointer;
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-}
-
-.popup-trigger:hover {
-    background-color: #e0e0e0;
-}
-
 .popup {
     position: fixed;
     top: 0;
