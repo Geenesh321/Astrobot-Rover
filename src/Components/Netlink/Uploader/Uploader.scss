@@ -1,0 +1,69 @@
+.netlink-page {
+    background: linear-gradient(180deg, rgb(118, 237, 233) 0%, rgb(94, 197, 210) 49.5%, rgb(68, 157, 186) 100%);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--paragraph);
+    color:white;
+
+    .netlink-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    .content-wrapper {
+        padding: 20px;
+
+        .uploader {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--fourth-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-right: 20px;
+            box-shadow: 6px 6px 4px rgba(0, 0, 0, 9); 
+
+
+            .icon {
+                font-size: 3em;
+                color: var(--third-color);
+            }
+
+            .net-desc {
+                margin: -55px 0px 10px 70px;
+
+                .upload-title{
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                }
+
+                p {
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                    font-family: var(--paragraph);
+                }
+            }
+
+
+            .popup-trigger {
+                background-color: var(--fourth-color);
+                color: var(--secondary-color);
+                border: 1px dashed;
+                border-radius: 4px;
+                padding: 10px 20px;
+                font-size: 18px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: var(--third-color);
+                }
+            }
+        }
+    }
+}

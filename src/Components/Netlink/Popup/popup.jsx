@@ -4,7 +4,7 @@ import './popup.scss';
 const Popup = ({ onClose }) => {
     const [title, setTitle] = useState('');
     const [question, setQuestion] = useState('');
-    const [photo, setPhoto] = useState(null);
+    const [photos, setPhotos] = useState([]);
 
     const handleTitleChange = (event) => {
         setTitle(event.target.value);
@@ -15,11 +15,13 @@ const Popup = ({ onClose }) => {
     };
 
     const handlePhotoChange = (event) => {
+        const selectedPhotos = Array.from(event.target.files);
+        setPhotos(selectedPhotos);
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        onClose(); 
+        onClose();
     };
 
     return (
@@ -28,9 +30,17 @@ const Popup = ({ onClose }) => {
                 <span className="close" onClick={onClose}>&times;</span>
                 <h2>Add Content</h2>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Title" value={title} onChange={handleTitleChange} />
-                    <textarea placeholder="Question" value={question} onChange={handleQuestionChange}></textarea>
-                    <input type="file" accept="image/*" onChange={handlePhotoChange} />
+                    <input type="text" placeholder="Title" value={title} onChange={handleTitleChange} className="form-input" />
+                    <textarea placeholder="Project Description" value={question} onChange={handleQuestionChange}></textarea>
+                    <input type="file" accept="image/*" onChange={handlePhotoChange} multiple 
+                    
+                    
+                    />
+                    <div className="photo-previews">
+                        {photos.map((photo, index) => (
+                            <img key={index} src={URL.createObjectURL(photo)} alt={`Photo ${index}`} />
+                        ))}
+                    </div>
                     <button type="submit">Submit</button>
                 </form>
             </div>
