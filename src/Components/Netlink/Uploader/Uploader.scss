@@ -4,13 +4,13 @@
     flex-direction: column;
     font-family: var(--paragraph);
     color:white;
+    width: 100%;
 
     .netlink-container {
         flex: 1;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 30%;
         margin: 0 auto;
     }
 
@@ -48,7 +48,6 @@
                     font-family: var(--paragraph);
                 }
             }
-
 
             .popup-trigger {
                 background-color: var(--fourth-color);
