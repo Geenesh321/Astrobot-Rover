@@ -11,7 +11,7 @@ import Live from './Components/Live/live.jsx';
 import NavBar from './Components/NavBar/bar.jsx';
 import NetLink from './Components/Netlink/netlink.jsx';
 
-import Feed from './Components/Netlink/Feed/feed.jsx';
+import Post from './Components/Netlink/Post/post.jsx'
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
           <Route path='/bar' element={<NavBar />} />
           <Route path='/login' element={<Login />} />
           <Route path='/netlink' element={<NetLink />} />
-          <Route path='/feed' element={<Feed />} />
+          <Route path='/post' element={<Post />} />
 
 
         </Routes>

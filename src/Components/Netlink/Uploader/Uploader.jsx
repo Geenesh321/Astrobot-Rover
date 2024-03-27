@@ -4,6 +4,8 @@ import './Uploader.scss';
 import Popup from '../Popup/popup';
 import { FaUpload } from 'react-icons/fa';
 import Feed from '../Feed/feed';
+import Post from '../Post/post';
+
 
 
 const Uploader = () => {
@@ -30,7 +32,12 @@ const Uploader = () => {
                         </div>
                         {isPopupOpen && <Popup onClose={togglePopup} />}
                     </div>
+
+
+
+
                 </div>
+                <Post />
             </div>
         </>
     );
