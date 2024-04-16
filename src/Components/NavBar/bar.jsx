@@ -36,6 +36,8 @@ const NavBar = () => {
                 {isDropdownOpen && (
                     <div className="dropdown">
                         <p>Welcome Zenas</p>
+                        {/* <p>{post.user.full_name}</p> */}
+
                         <button className="user-logout" onClick={handleLogoutClick}>
                             Logout
                         </button>

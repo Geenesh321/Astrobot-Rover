@@ -7,10 +7,10 @@ const Logout = () => {
     <div className="login">
       <div className="left-card">
         <div className="Lheader">
-          <img alt="Brand" src={require("/Astrobot-Rover/Frontend/src/Assets/Register/brand.png")} />
+          <img alt="Brand" src={require("../../Assets/Register/brand.png")} />
         </div>
         <div className="Lbody">
-          <img alt="Brand" src={require("/Astrobot-Rover/Frontend/src/Assets/Login/Laptop.png")} />
+          <img alt="Brand" src={require("../../Assets/Login/Laptop.png")} />
         </div>
         <div className="Lfooter">
           <p>
@@ -22,7 +22,7 @@ const Logout = () => {
       <div className="right-card">
         <div className="logout-modal-header">
           <span className="logout-icon">
-            <img alt="Brand" src={require("/Astrobot-Rover/Frontend/src/Assets/Logout/logout.png")} />
+            <img alt="Brand" src={require("../../Assets/Logout/logout.png")} />
           </span>
           Are you leaving? 
         </div>
