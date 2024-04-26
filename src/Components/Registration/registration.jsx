@@ -6,13 +6,13 @@ import { MdOutlineMail } from "react-icons/md";
 import './registration.scss';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { redirect } from 'react-router-dom';
+import { redirect, useNavigate } from 'react-router-dom';
 
 
 const Registration = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [previewImage, setPreviewImage] = useState(null);
-
+    const navigate = useNavigate()
     const handleFileChange = (event) => {
         const file = event.target.files[0];
 
@@ -72,6 +72,7 @@ const Registration = () => {
                 setPassword('');
                 setSelectedFile(null);
                 setPreviewImage(null);
+                navigate('/login')
 
             }
             else if (response.status === 226) {

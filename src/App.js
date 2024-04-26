@@ -19,14 +19,14 @@ function App() {
       <>
         <Navigation />
         <Routes>
-          <Route path='/' element={<Landing />} />
+          <Route path='/' element={<Login />} />
+          <Route path='/Landing' element={<Landing />} />
           <Route path='/temperature' element={<Temperature />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="registration" element={<Registration />} />
           <Route path='/moist' element={<Moist />} />
           <Route path='/live' element={<Live />} />
           <Route path='/bar' element={<NavBar />} />
-          <Route path='/login' element={<Login />} />
           <Route path='/netlink' element={<NetLink />} />
           <Route path='/post' element={<Post />} />
 
