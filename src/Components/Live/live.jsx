@@ -3,11 +3,14 @@ import './live.scss';
 
 import NavBar from '../NavBar/bar';
 import Footer from '../footer/footer';
+import Nav from "../Nav/Navigation";
+
 
 const LivePage = () => {
   
   return (
     <>
+    <Nav />
     <NavBar />
     <div className='livePage'>
       <div className='liveBackground'>
@@ -53,7 +56,7 @@ const LivePage = () => {
 
           </div>
 
-          <a className='watchLiveBtn' href="http://10.50.0.197/">  Watch Live</a>
+          <a className='watchLiveBtn' href="http://172.20.10.10/">  Watch Live</a>
         </div>
       </div>
 

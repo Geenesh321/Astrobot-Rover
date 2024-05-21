@@ -4,7 +4,8 @@ import "./landing.scss";
 import Social from "../Social/social";
 import Testimonial from "../Testimonial/testimonial"
 import Client from "../Client/client";
-import Loading from "../Loading/loading"
+import Loading from "../Loading/loading";
+import Nav from "../Nav/Navigation";
 
 const Landing = () => {
     
@@ -37,6 +38,7 @@ const Landing = () => {
 
     return (
         <>
+        <Nav />
             <div className="land_Container">
 
                 <img alt="Logo-Astrobot" src={require("/Astrobot-Rover/Frontend/src/Assets/Register/brand.png")} className="logo" />

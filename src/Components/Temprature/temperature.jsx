@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './temperature.scss';
 import NavBar from '../NavBar/bar';
 import Footer from '../footer/footer';
+import Nav from "../Nav/Navigation";
+
 
 const Temperature = () => {
   const [activeTab, setActiveTab] = useState('contentTemperature');
@@ -18,6 +20,7 @@ const Temperature = () => {
 
   return (
     <>
+    <Nav />
       <div className="temperature-container">
         <NavBar/>
 

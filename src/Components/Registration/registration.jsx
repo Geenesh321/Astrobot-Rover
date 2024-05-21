@@ -6,13 +6,13 @@ import { MdOutlineMail } from "react-icons/md";
 import './registration.scss';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { redirect, useNavigate } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [previewImage, setPreviewImage] = useState(null);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
     const handleFileChange = (event) => {
         const file = event.target.files[0];
 
@@ -30,20 +30,13 @@ const Registration = () => {
         }
     };
 
-
-    const handleSubmit = (event) => {
-        console.log("Clickeeeeeddddddddddddd");
-        event.preventDefault();
-        console.log('Form submitted', selectedFile);
-    };
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const handleEmailChange = (event) => {
-        console.log(event)
-        setEmail(event.target.value); // Upd ate the email state with the new value
-    };
 
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value); 
+    };
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -54,11 +47,10 @@ const Registration = () => {
             formData.append('email', email);
             formData.append('password', password);
             formData.append('avatar', selectedFile);
-            console.log(formData)
+
             // Send registration data to the server
             const response = await axios.post('http://127.0.0.1:8000/user/api/signup/', formData);
-            console.log(response.data)
-            console.log(response.status)
+
             // Display success alert
             if (response.status === 201) {
                 Swal.fire({
@@ -66,37 +58,27 @@ const Registration = () => {
                     title: 'Registration Successful',
                     text: 'Your account has been created successfully!',
                 });
-                // redirect('/login')
+
                 setFullName('');
                 setEmail('');
                 setPassword('');
                 setSelectedFile(null);
                 setPreviewImage(null);
-                navigate('/login')
-
-            }
-            else if (response.status === 226) {
+                navigate('/');
+            } else if (response.status === 226) {
                 Swal.fire({
-                    icon: 'Failed',
-                    title: 'User already exist ',
+                    icon: 'error',
+                    title: 'User already exists',
                     text: 'Please enter a different email!',
                 });
-            }
-            else {
+            } else {
                 Swal.fire({
-                    icon: 'Failed',
+                    icon: 'error',
                     title: 'Something went wrong',
                     text: 'Please try again later!',
                 });
-
             }
-            // Clear form fields after successful registration
-
-
-
-            // You can redirect the user to a login page or dashboard here
         } catch (error) {
-            // Display error alert
             Swal.fire({
                 icon: 'error',
                 title: 'Registration Failed',
@@ -106,6 +88,11 @@ const Registration = () => {
             console.error('Registration failed:', error);
         }
     };
+
+    const handleLoginClick = () => {
+        navigate('/');
+    };
+
     return (
         <div className="registration-container">
             <div className="container">
@@ -163,12 +150,11 @@ const Registration = () => {
                     </div>
                     <button type="submit">Register</button>
                     <div className="login-link">
-                        Already have an account? <a href="/login">Log In</a>
+                        Already have an account? <a onClick={handleLoginClick}>Log In</a>
                     </div>
                 </form>
             </div>
         </div>
-
     );
 };
 

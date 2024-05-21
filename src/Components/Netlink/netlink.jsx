@@ -4,11 +4,12 @@ import './netlink.scss';
 import NavBar from '../NavBar/bar';
 import Footer from '../footer/footer';
 import Uploader from './Uploader/Uploader';
-
+import Nav from "../Nav/Navigation";
 
 const NetLink = () => {
     return (
         <>
+        <Nav />
             <NavBar />
             <div className="netlink-heading">
                 <img src={require("../../Assets/Netlink/iot.jpg")} alt="Image of IoT" className='IoT' />

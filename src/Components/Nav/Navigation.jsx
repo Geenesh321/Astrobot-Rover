@@ -16,7 +16,7 @@ const Navigation = () => {
 
   const handleItemClick = (index) => {
     setActiveIndex(index);
-    const routes = ['/temperature', '/moist', '/live', '/netlink', '/login'];
+    const routes = ['/temperature', '/moist', '/live', '/netlink', '/Logout'];
     navigate(routes[index]);
   };
 
@@ -52,7 +52,7 @@ const Navigation = () => {
           <li onClick={() => handleItemClick(4)} className={`your-li-class ${activeIndex === 4 ? 'active' : ''}`} style={{ marginTop: '20px' }}>
             <div className="icon-and-text">
               <span className="icon"><IoPersonSharp /></span>
-              <span className="text">Login</span>
+              <span className="text">Logout</span>
             </div>
           </li>
         </ul>

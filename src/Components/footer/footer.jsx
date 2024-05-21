@@ -21,7 +21,7 @@ const Footer = () => {
       </section>
 
       <nav className="footer-nav">
-        <a href="/" className="nav-item">Home</a>
+        <a href="/Landing" className="nav-item">Home</a>
         <a href="/temperature" className="nav-item">Temperature</a>
         <a href="/moist" className="nav-item">Moisture</a>
         <a href="/live" className="nav-item">Live</a>
